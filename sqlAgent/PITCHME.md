@@ -63,7 +63,7 @@ Microsoft Azure MVP
 * Jobs can run across subscription
 * One off or scheduled execution
 * Performance, cost and scale depends on Job DB
-* Currently in Preview
+* @color[orange](Currently in Preview)
 * Administration is all PowerShell or T-SQL (no GUI)
 
 @size[1.2em](Cost:) @color[orange](£10 - £3000 per month)
@@ -86,7 +86,7 @@ Microsoft Azure MVP
 ---?image=sqlAgent/images/AzureFunctions_COLOR_LARGE.svg&opacity=20&size=80% 80%&position=right
 ### Azure Functions
 
-* Multiple Languages
+* Multiple Languages, some experimental
 * Multiple triggers, Input and output bindings
 * Nearly instant startup
 * Autoscaling and dynamic memory
