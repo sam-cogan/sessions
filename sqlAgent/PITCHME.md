@@ -57,11 +57,11 @@ Microsoft Azure MVP
 ### Elastic Database Jobs
 
 
-* Run jobs in parrallel across databses
+* Run jobs in parallel across databases
 * Jobs written in T-SQL
 * Supports SQL Databases, Servers and Elastic Pools
 * Jobs can run across subscription
-* One off or scheduled execution
+* One-off or scheduled execution
 * Performance, cost and scale depends on Job DB
 * @color[orange](Currently in Preview)
 * Administration is all PowerShell or T-SQL (no GUI)
@@ -77,7 +77,7 @@ Microsoft Azure MVP
 * Run on schedule or webhook
 * Delayed start
 * Secure variable storage
-* 3 hour timeout (with resume)
+* 3-hour timeout (with resume)
 * No output binding
 * Supports Hybrid Workers
 
@@ -90,7 +90,7 @@ Microsoft Azure MVP
 * Multiple triggers, Input and output bindings
 * Nearly instant startup
 * Autoscaling and dynamic memory
-* 5 minute timeout by default
+* 5-minute timeout by default
 * Supports Managed Service Identity
 
 @size[1.2em](Cost:) @color[orange](large free grant, then £0.000012/GB-s and £0.15 per million executions )
