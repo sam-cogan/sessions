@@ -150,8 +150,8 @@ Microsoft Azure MVP
 
 #### @color[orange](Resources)
 
-* Slides -  
-* Code Samples - 
+* Slides - http://bit.ly/2NHKEOE
+* Code Samples - http://bit.ly/2L0WYeu
  
  <br/>
 
