@@ -1,0 +1,16 @@
+# Layout
+layout : top-left
+
+# Look-and-Feel
+
+theme : black
+theme-override : /sqlAgent/css/custom.css
+highlight : ir-black
+
+# Behavior
+transition : none
+published : true
+
+# Plugins
+charts : true
+mathjax : TeX-AMS_HTML-full
