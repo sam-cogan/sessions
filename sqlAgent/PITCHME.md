@@ -157,5 +157,5 @@ Microsoft Azure MVP
 
 #### @color[orange](Image Atrribution)
 
-* @size[0.8em]([What ?](https://flickr.com/photos/wonderferret/1447024668 "What ?") flickr photo by [wonderferret](https://flickr.com/people/wonderferret) shared under a [Creative Commons (BY) license](https://creativecommons.org/licenses/by/2.0/))
-* @size[0.8em]([Clouds](https://flickr.com/photos/jonolist/9229214173 "Clouds") flickr photo by [jonolist](https://flickr.com/people/jonolist) shared under a [Creative Commons (BY-SA) license](https://creativecommons.org/licenses/by-sa/2.0/))
+* @size[0.8em]([What ?](https://flickr.com/photos/wonderferret/1447024668 "What ?") flickr photo by [wonderferret](https://flickr.com/people/wonderferret) shared under a [Creative Commons (BY) license](https://creativecommons.org/licenses/by/2.0/)
+* @size[0.8em]([Clouds](https://flickr.com/photos/jonolist/9229214173 "Clouds") flickr photo by [jonolist](https://flickr.com/people/jonolist) shared under a [Creative Commons (BY-SA) license](https://creativecommons.org/licenses/by-sa/2.0/)
