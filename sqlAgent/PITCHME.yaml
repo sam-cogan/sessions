@@ -3,9 +3,9 @@ layout : top-left
 
 # Look-and-Feel
 
-theme : black
+theme : white
 theme-override : /sqlAgent/css/custom.css
-highlight : ir-black
+highlight : ir-white
 
 # Behavior
 transition : none

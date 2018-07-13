@@ -35,12 +35,6 @@
 }
 
 .reveal tr:nth-child(even) {
-    background-color: rgb(129, 99, 42)
+    background-color: #00bf6f
 }
 
-.footnote {
-    position: absolute;
-    bottom: 10px;
-    width: 50%;
-    border: 3px solid #8AC007;
-  }

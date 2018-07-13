@@ -1,8 +1,11 @@
----?image=sqlAgent/images/9229214173_562de0740c_z.jpg
-@size[2em](SQL Agent in the Cloud)
-
-
-@size[0.5em](Sam Cogan)
+---?image=sqlAgent/images/Slide1.PNG
+---?image=sqlAgent/images/Slide2.PNG
+---?image=sqlAgent/images/Slide3.PNG
+---?image=sqlAgent/images/Slide4.PNG
+---?image=sqlAgent/images/Slide5.PNG
+---?image=sqlAgent/images/Slide6.PNG
+---?image=sqlAgent/images/Slide7.PNG
+---?image=sqlAgent/images/Slide8.PNG
 
 
 ---
@@ -18,11 +21,11 @@ Microsoft Azure MVP
 
 <br/><br/>
 
-@fa[chrome] @color[#e49436](samcogan.com)  
+@fa[chrome] @color[#00bf6f](samcogan.com)  
 
-@fa[twitter] @color[#e49436](@samcogan)  
+@fa[twitter] @color[#00bf6f](@samcogan)  
 
-@fa[github] @color[#e49436](sam-cogan)  
+@fa[github] @color[#00bf6f](sam-cogan)  
 
 @divend
 
@@ -48,9 +51,9 @@ Microsoft Azure MVP
 * Alternatives:
     * IaaS Virtual Machine with SQL
     * Azure SQL Managed Instance
-    * @color[orange](Elastic Database Jobs)
-    * @color[orange](Azure Automation)
-    * @color[orange](Azure Functions)
+    * @color[#00bf6f](Elastic Database Jobs)
+    * @color[#00bf6f](Azure Automation)
+    * @color[#00bf6f](Azure Functions)
 
 
 ---?image=sqlAgent/images/AzureSQLStretchDatabase_COLOR.svg&opacity=20&size=80% 80%&position=right bottom
@@ -63,10 +66,10 @@ Microsoft Azure MVP
 * Jobs can run across subscription
 * One-off or scheduled execution
 * Performance, cost and scale depends on Job DB
-* @color[orange](Currently in Preview)
+* @color[#00bf6f](Currently in Preview)
 * Administration is all PowerShell or T-SQL (no GUI)
 
-@size[1.2em](Cost:) @color[orange](£10 - £3000 per month)
+@size[1.2em](Cost:) @color[#00bf6f](£10 - £3000 per month)
 
 ---?image=sqlAgent/images/conceptual-diagram.png&position=bottom 10px &size=80% 80%
 
@@ -81,7 +84,7 @@ Microsoft Azure MVP
 * No output binding
 * Supports Hybrid Workers
 
-@size[1.2em](Cost:) @color[orange](500 Minutes Free, then £0.002/minute )
+@size[1.2em](Cost:) @color[#00bf6f](500 Minutes Free, then £0.002/minute )
 
 ---?image=sqlAgent/images/AzureFunctions_COLOR_LARGE.svg&opacity=20&size=80% 80%&position=right
 ### Azure Functions
@@ -94,7 +97,7 @@ Microsoft Azure MVP
 * 5-minute timeout by default
 * Supports Managed Service Identity
 
-@size[1.2em](Cost:) @color[orange](large free grant, then £0.000012/GB-s and £0.15 per million executions )
+@size[1.2em](Cost:) @color[#00bf6f](large free grant, then £0.000012/GB-s and £0.15 per million executions )
 
 ---
 ### Which To Use?
@@ -118,7 +121,7 @@ Microsoft Azure MVP
 
 @div[left]
 
-<h4> @color[orange](Move Beyond Maintenance)</h4>
+<h4> @color[#00bf6f](Move Beyond Maintenance)</h4>
 
 <ul>
 <li> Scaling</li>
@@ -131,7 +134,7 @@ Microsoft Azure MVP
 
 @div[right]
 
-<h4> @color[orange](Integration)</h4>
+<h4> @color[#00bf6f](Integration)</h4>
 <ul>
 <li>Event Grid </li>
 <li> Azure Scheduler </li>
@@ -149,14 +152,13 @@ Microsoft Azure MVP
 
 ---
 
-#### @color[orange](Resources)
+#### @color[#00bf6f](Resources)
 
 * Slides - http://bit.ly/2NHKEOE
 * Code Samples - http://bit.ly/2L0WYeu
  
  <br/>
 
-#### @color[orange](Image Atrribution)
+#### @color[#00bf6f](Image Atrribution)
 
 * @size[0.8em]([What ?](https://flickr.com/photos/wonderferret/1447024668 "What ?") flickr photo by [wonderferret](https://flickr.com/people/wonderferret) shared under a [Creative Commons (BY) license](https://creativecommons.org/licenses/by/2.0/)
-* @size[0.8em]([Clouds](https://flickr.com/photos/jonolist/9229214173 "Clouds") flickr photo by [jonolist](https://flickr.com/people/jonolist) shared under a [Creative Commons (BY-SA) license](https://creativecommons.org/licenses/by-sa/2.0/)
