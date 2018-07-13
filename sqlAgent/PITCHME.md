@@ -1,7 +1,7 @@
 ---?image=sqlAgent/images/9229214173_562de0740c_z.jpg
 @size[2em](SQL Agent in the Cloud)
 
-@size[0.5em](SQl Saturday Manchester - 14th July 2018)  
+
 @size[0.5em](Sam Cogan)
 
 
@@ -86,6 +86,7 @@ Microsoft Azure MVP
 ---?image=sqlAgent/images/AzureFunctions_COLOR_LARGE.svg&opacity=20&size=80% 80%&position=right
 ### Azure Functions
 
+* Serverless compute, based on App Service
 * Multiple Languages, some experimental
 * Multiple triggers, Input and output bindings
 * Nearly instant startup
