@@ -5,6 +5,7 @@
 $TargetServer = Get-AzureRmSqlServer -ResourceGroupName SQLAgentDemos -ServerName sqlagentdemo
 $DB1=Get-AzureRmSqlDatabase -ResourceGroupName SQLAgentDemos -DatabaseName "sqlAgentDemoDB01" -ServerName $TargetServer.ServerName
 $DB2=Get-AzureRmSqlDatabase -ResourceGroupName SQLAgentDemos -DatabaseName "sqlAgentDemoDB02" -ServerName $TargetServer.ServerName
+$DB3=Get-AzureRmSqlDatabase -ResourceGroupName SQLAgentDemos -DatabaseName "OutputDatabase" -ServerName $TargetServer.ServerName
 
 $AdminLogin="DBAdmin"
 $AdminPassword="4IvufzC64R3z"
@@ -27,7 +28,7 @@ Invoke-SqlCmd @Params
 # For each of the target databases
 # - Create the jobuser from jobuser login
 # - Make sure they have the right permissions for successful script execution
-$TargetDatabases = @( $Db1.DatabaseName, $Db2.DatabaseName )
+$TargetDatabases = @($Db1.DatabaseName,$Db2.DatabaseName, $Db3.DatabaseName )
 $CreateJobUserScript =  "CREATE USER jobuser FROM LOGIN jobuser"
 $GrantAlterSchemaScript = "GRANT ALTER ON SCHEMA::dbo TO jobuser"
 $GrantCreateScript = "GRANT CREATE TABLE TO jobuser"
