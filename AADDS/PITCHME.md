@@ -186,7 +186,7 @@ Current Limitations
 @snapend
 
 ---?image=template/img/bg/pink.jpg&position=left&size=30% 100%
-@title[User Creation]
+@title[User Creation & Management]
 
 @snap[west text-white]
 @size[3em](3.)
@@ -271,6 +271,7 @@ Current Limitations
 @snap[west text-black span-100]
 @ul[split-screen-list](false)
 - Limited support for multi-domain forests sync
+- LDAP support is read only
 - No support for AAD B2C/B2B Users
 - Limited Regions
 - Expensive for small workloads
@@ -310,6 +311,7 @@ Bad Uses
 - Most production workloads until Multi-Region availability
 - Replacing your AD Domain
 - Anything that needs Domain or Schema admin
+- You cannot support password hash sync
 - Disaster Recovery
 @ulend
 @snapend
