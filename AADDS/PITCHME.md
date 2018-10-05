@@ -94,7 +94,8 @@ Microsoft Azure MVP
 @quote[Your scientists were so preoccupied with whether or not they could that they didn't stop to think if they should.](Dr. Ian Malcolm)
 @snapend
 
-
+---
+Dpeloyment Scenarios
 ---?image=template/img/bg/blue.jpg&position=top&size=100% 15%
 @snap[north text-white span-100]
 @size[1.5em](Cloud Only)
@@ -116,6 +117,10 @@ Microsoft Azure MVP
 
 @css[text-blue](AAD DS Setup)
 
+---
+
+Limitations
+
 ---?image=template/img/bg/green.jpg&position=top&size=100% 15%
 @title[Resolved Issues]
 
@@ -130,9 +135,12 @@ Microsoft Azure MVP
 - ~~No Custom OUs~~
 - ~~No Custom GPOs~~
 - ~~No support for Kerberos Delegation~~
+- ~~Not available in CSP~~
 
 @ulend
 @snap
+
+
 ---?image=template/img/bg/orange.jpg&position=right&size=50% 100%
 @title[Current Issues/Restrictions]
 
@@ -277,7 +285,9 @@ Current Limitations
 - Expensive for small workloads
 @ulend
 @snapend
+---
 
+Use cases
 ---
 @title[Good Uses]
 
@@ -315,6 +325,20 @@ Bad Uses
 - Disaster Recovery
 @ulend
 @snapend
+---
+
+Summary
+@ul
+- AAD DS is has a number of limitations
+- It can be a great solution if your use case works within those limitations
+- AAD DS is not a replacement or even a replica of your on premesis domain
+- Lack of Multi-Region support is a big issue
+- Microsoft can do better at naming things
+@ulend
+---
+Questions
+
+
 ---
 @title[Personal Biography]
 
