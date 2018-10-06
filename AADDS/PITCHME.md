@@ -45,7 +45,7 @@ Microsoft Azure MVP
 
 
 ![MVP](template/img/MVP_Logo_Horizontal_Preferred_Cyan300_CMYK_72ppi.png)
-
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />
 @snapend
 
 ---?image=template/img/3632622724_59641ebf58_b.jpg
@@ -95,7 +95,8 @@ Microsoft Azure MVP
 @snapend
 
 ---
-Dpeloyment Scenarios
+## Deployment Scenarios
+@css[text-blue](Cloud & Hybrid)
 ---?image=template/img/bg/blue.jpg&position=top&size=100% 15%
 @snap[north text-white span-100]
 @size[1.5em](Cloud Only)
@@ -119,7 +120,8 @@ Dpeloyment Scenarios
 
 ---
 
-Limitations
+## Limitations
+@css[text-blue](Past & Present)
 
 ---?image=template/img/bg/green.jpg&position=top&size=100% 15%
 @title[Resolved Issues]
@@ -287,13 +289,14 @@ Current Limitations
 @snapend
 ---
 
-Use cases
+## Use cases
+@css[text-blue](Good & Bad)
 ---
-@title[Good Uses]
+@title[Good Use Cases]
 
 
 @snap[west split-screen-heading text-green span-40]
-Good Uses
+Good Use Cases
 @snapend
 
 @snap[east text-black span-60]
@@ -309,14 +312,14 @@ Good Uses
 
 
 ---
-@title[Bad Uses]
+@title[Bad Use Cases]
 
 
 @snap[east split-screen-heading text-pink span-40]
-Bad Uses
+Bad Use Cases
 @snapend
 
-@snap[west text-black span-60]
+@snap[west list-content-verbose span-100]
 @ul[split-screen-list](false)
 - Most production workloads until Multi-Region availability
 - Replacing your AD Domain
@@ -325,18 +328,21 @@ Bad Uses
 - Disaster Recovery
 @ulend
 @snapend
----
-
+---?image=template/img/bg/blue.jpg&position=left&size=40% 100%
+@snap[west split-screen-heading text-white span-30]
 Summary
-@ul
-- AAD DS is has a number of limitations
-- It can be a great solution if your use case works within those limitations
+@snapend
+@snap[east list-content-verbose span-60]
+@ul[split-screen-list](false)
+- AAD DS can be a great solution for specific scenarios
+- AAD DS has limitions and restrictions you need to be able to work within
 - AAD DS is not a replacement or even a replica of your on premesis domain
+- Deploying domain controllers in Azure is still valid in some scenarios
 - Lack of Multi-Region support is a big issue
-- Microsoft can do better at naming things
 @ulend
+@snap
 ---
-Questions
+## Questions?
 
 
 ---
@@ -371,7 +377,7 @@ Microsoft Azure MVP
 
 
 ![MVP](template/img/MVP_Logo_Horizontal_Preferred_Cyan300_CMYK_72ppi.png)
-
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />
 @snapend
 
 ---?image=template/img/bg/orange.jpg&position=top&size=100% 15%
