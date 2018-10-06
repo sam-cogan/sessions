@@ -56,7 +56,7 @@ Microsoft Azure MVP
     * @color[#00bf6f](Azure Functions)
 
 
----?image=sqlAgent/images/AzureSQLStretchDatabase_COLOR.svg&opacity=20&size=80% 80%&position=right bottom
+---?image=sqlAgent/images/AzureSQLStretchDatabase_COLOR.svg&opacity=40&size=80% 80%&position=right bottom
 ### Elastic Database Jobs
 
 
@@ -73,7 +73,7 @@ Microsoft Azure MVP
 
 ---?image=sqlAgent/images/conceptual-diagram.png&position=bottom 10px &size=80% 80%
 
----?image=sqlAgent/images/Azure-Automation_COLOR.svg&opacity=20&size=80% 80%&position=right
+---?image=sqlAgent/images/Azure-Automation_COLOR.svg&opacity=40&size=80% 80%&position=right
 ### Azure Automation
 
 * PowerShell only
@@ -86,7 +86,7 @@ Microsoft Azure MVP
 
 @size[1.2em](Cost:) @color[#00bf6f](500 Minutes Free, then £0.002/minute )
 
----?image=sqlAgent/images/AzureFunctions_COLOR_LARGE.svg&opacity=20&size=80% 80%&position=right
+---?image=sqlAgent/images/AzureFunctions_COLOR_LARGE.svg&opacity=40&size=80% 80%&position=right
 ### Azure Functions
 
 * Serverless compute, based on App Service

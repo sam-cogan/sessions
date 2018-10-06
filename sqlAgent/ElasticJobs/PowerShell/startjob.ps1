@@ -1,7 +1,7 @@
-$jobName="CreateTablePS"
+# $jobName="CreateTablePS"
 
-$jobexecution= Start-AzureRmSqlElasticJob -JobName $jobName -ResourceGroupName "SQLAgentDemos" -ServerName "SQLAgentDemo" -AgentName "DemoJobAgent"
-$jobexecution
+# $jobexecution= Start-AzureRmSqlElasticJob -JobName $jobName -ResourceGroupName "SQLAgentDemos" -ServerName "SQLAgentDemo" -AgentName "DemoJobAgent"
+# $jobexecution
 
 
 $jobName="GetFragmentation"
