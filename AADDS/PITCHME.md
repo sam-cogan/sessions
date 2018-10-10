@@ -123,29 +123,14 @@ Microsoft Azure MVP
 @css[text-blue](Past & Present)
 
 
----?image=template/img/bg/green.jpg&position=right&size=50% 100%
+
+
+---?image=template/img/bg/orange.jpg&position=right&size=50% 100%
 @title[Benefits]
 
-@snap[west split-screen-heading text-green span-40]
+
+@snap[west split-screen-heading text-orange span-40]
 Benefits
-@snapend
-
-@snap[east text-white span-55]
-@ol[split-screen-list](false)
-- Simple Deployment
-- No management overhead
-- High availbility built in
-- The only way to achieve AAD -> AD Sync
-
-@olend
-@snapend
-
----?image=template/img/bg/green.jpg&position=right&size=50% 100%
-@title[Current Issues/Restrictions]
-
-
-@snap[west split-screen-heading text-green span-40]
-Current Limitations
 @snapend
 
 @snap[east text-white span-55]
@@ -363,7 +348,7 @@ Good Use Cases
 Bad Use Cases
 @snapend
 
-@snap[west list-content-verbose span-100]
+@snap[west list-content-verbose span-60]
 @ul[split-screen-list](false)
 - Many   production workloads until Multi-Region availability
 - Replacing your AD Domain
