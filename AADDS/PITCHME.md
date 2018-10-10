@@ -1,4 +1,4 @@
----?image=template/img/bg/blue.jpg&position=bottom&size=100% 20%
+---?image=template/img/892904776_874073003e_o.jpg
 @title[Domain Controllers in the Cloud?]
 
 
@@ -8,7 +8,7 @@
 @snapend
 
 
-@snap[west headline text-black span-100]
+@snap[west headline text-white span-100]
 Azure AD <br> Domain Services<br>
 
 @snapend
@@ -119,9 +119,48 @@ Microsoft Azure MVP
 @css[text-blue](AAD DS Setup)
 
 ---
-
-## Limitations
+##  Benefits & Limitations
 @css[text-blue](Past & Present)
+
+
+---?image=template/img/bg/green.jpg&position=right&size=50% 100%
+@title[Benefits]
+
+@snap[west split-screen-heading text-green span-40]
+Benefits
+@snapend
+
+@snap[east text-white span-55]
+@ol[split-screen-list](false)
+- Simple Deployment
+- No management overhead
+- High availbility built in
+- The only way to achieve AAD -> AD Sync
+
+@olend
+@snapend
+
+---?image=template/img/bg/green.jpg&position=right&size=50% 100%
+@title[Current Issues/Restrictions]
+
+
+@snap[west split-screen-heading text-green span-40]
+Current Limitations
+@snapend
+
+@snap[east text-white span-55]
+@ol[split-screen-list](false)
+- Simple Deployment
+- No management overhead
+- High availbility built in
+- Achieve AAD to AD Sync
+- JIT Admin Support
+- GPO Support
+- LDAP, NTLM, Kerberos
+- No VPN or Express Route
+@olend
+@snapend
+
 
 ---?image=template/img/bg/green.jpg&position=top&size=100% 15%
 @title[Resolved Issues]
@@ -287,7 +326,12 @@ Current Limitations
 - Expensive for small workloads
 @ulend
 @snapend
+
+
+
 ---
+
+
 
 ## Use cases
 @css[text-blue](Good & Bad)
@@ -321,7 +365,7 @@ Bad Use Cases
 
 @snap[west list-content-verbose span-100]
 @ul[split-screen-list](false)
-- Most production workloads until Multi-Region availability
+- Many   production workloads until Multi-Region availability
 - Replacing your AD Domain
 - Anything that needs Domain or Schema admin
 - You cannot support password hash sync
@@ -341,8 +385,8 @@ Summary
 - Lack of Multi-Region support is a big issue
 @ulend
 @snap
----
-## Questions?
+---?image=template/img/7004084680_46fea91b78_z.jpg
+## @css[text-white](Questions?)
 
 
 ---
@@ -388,7 +432,10 @@ Microsoft Azure MVP
 @size[1.5em](Image Attribution)
 @snapend
 
+[The north side](https://flickr.com/photos/alq666/892904776 "The north side") flickr photo by [alq666](https://flickr.com/people/alq666) shared under a [Creative Commons (BY-SA) license](https://creativecommons.org/licenses/by-sa/2.0/)
 
 [Clouds](https://flickr.com/photos/34037930@N03/3632622724 "Clouds") flickr photo by [hoojammyflip](https://flickr.com/people/34037930@N03) shared under a [Creative Commons (BY-NC-ND) license](https://creativecommons.org/licenses/by-nc-nd/2.0/)
 
 [October Sunset, taken from Blackfriars Bridge.](https://flickr.com/photos/davebass5/15421364225 "October Sunset, taken from Blackfriars Bridge.") flickr photo by [Dave Pearce (London)](https://flickr.com/people/davebass5) shared under a [Creative Commons (BY-NC-ND) license](https://creativecommons.org/licenses/by-nc-nd/2.0/)
+
+[Question Mark Cookies 1](https://flickr.com/photos/mcleod/7004084680 "Question Mark Cookies 1") flickr photo by [Scott McLeod](https://flickr.com/people/mcleod) shared under a [Creative Commons (BY) license](https://creativecommons.org/licenses/by/2.0/)
