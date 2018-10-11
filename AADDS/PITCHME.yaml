@@ -19,13 +19,13 @@ theme : simple
 # Theme-Override Setting
 # Doc: https://gitpitch.com/docs/settings/custom-theme
 #
-theme-override : template/css/PITCHME.css
+theme-override : AADDS/template/css/PITCHME.css
 
 #
 # Logo Setting
 # https://gitpitch.com/docs/settings/logo
 #
-logo : template/img/icon-128x128.png
+logo : AADDS/template/img/icon-128x128.png
 logo-position : top-left
 
 #

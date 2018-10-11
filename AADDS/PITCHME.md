@@ -1,4 +1,4 @@
----?image=template/img/892904776_874073003e_o.jpg
+---?image=AADDS/template/img/892904776_874073003e_o.jpg
 @title[Domain Controllers in the Cloud?]
 
 
@@ -21,7 +21,7 @@ Sam Cogan
 @snapend
 
 @snap[east  span-40]
-![SamCogan](template/img/Sam_Cogan_new_cropped.jpg)
+![SamCogan](AADDS/template/img/Sam_Cogan_new_cropped.jpg)
 @snapend
 
 @snap[west about-bio-details span-60]
@@ -44,18 +44,18 @@ Microsoft Azure MVP
 @snap[south-west template-note text-gray]
 
 
-![MVP](template/img/MVP_Logo_Horizontal_Preferred_Cyan300_CMYK_72ppi.png)
+![MVP](AADDS/template/img/MVP_Logo_Horizontal_Preferred_Cyan300_CMYK_72ppi.png)
 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />
 @snapend
 
----?image=template/img/3632622724_59641ebf58_b.jpg
+---?image=AADDS/template/img/3632622724_59641ebf58_b.jpg
 
 @snap[ ]
-![AAD](template/img/AAD.svg )
+![AAD](AADDS/template/img/AAD.svg )
 @snapend
 
 
----?image=template/img/bg/gray.jpg
+---?image=AADDS/template/img/bg/gray.jpg
 @title[Quote Cloud]
 
 
@@ -81,13 +81,13 @@ Microsoft Azure MVP
 
 
 
----?image=template/img/15421364225_7dbb63d2f8_o.jpg
+---?image=AADDS/template/img/15421364225_7dbb63d2f8_o.jpg
 
 @snap[ mslogo-center]
-![AAD](template/img/AzureActiveDirectory_COLOR.svg )
+![AAD](AADDS/template/img/AzureActiveDirectory_COLOR.svg )
 @snapend
 
----?image=template/img/goldblum-wired-answers-3272018.png&position=left&size=60% auto
+---?image=AADDS/template/img/goldblum-wired-answers-3272018.png&position=left&size=60% auto
 @title[Quote + Image]
 
 @snap[north-east span-60]
@@ -97,20 +97,20 @@ Microsoft Azure MVP
 ---
 ## Deployment Scenarios
 @css[text-blue](Cloud & Hybrid)
----?image=template/img/bg/blue.jpg&position=top&size=100% 15%
+---?image=AADDS/template/img/bg/blue.jpg&position=top&size=100% 15%
 @snap[north text-white span-100]
 @size[1.5em](Cloud Only)
 @snapend
 @snap[south text-white span-100]
-![AADDS Cloud](template/img/aadds-overview-cloud.png)
+![AADDS Cloud](AADDS/template/img/aadds-overview-cloud.png)
 @snapend
 
----?image=template/img/bg/blue.jpg&position=top&size=100% 15%
+---?image=AADDS/template/img/bg/blue.jpg&position=top&size=100% 15%
 @snap[north text-white span-100]
 @size[1.5em](Hybrid)
 @snapend
 @snap[south text-white span-100]
-![AADDS Hybrid](template/img/aadds-overview-synced-tenant.png)
+![AADDS Hybrid](AADDS/template/img/aadds-overview-synced-tenant.png)
 @snapend
 
 ---
@@ -125,7 +125,7 @@ Microsoft Azure MVP
 
 
 
----?image=template/img/bg/orange.jpg&position=right&size=50% 100%
+---?image=AADDS/template/img/bg/orange.jpg&position=right&size=50% 100%
 @title[Benefits]
 
 
@@ -147,7 +147,7 @@ Benefits
 @snapend
 
 
----?image=template/img/bg/green.jpg&position=top&size=100% 15%
+---?image=AADDS/template/img/bg/green.jpg&position=top&size=100% 15%
 @title[Resolved Issues]
 
 @snap[north text-white span-100]
@@ -167,7 +167,7 @@ Benefits
 @snap
 
 
----?image=template/img/bg/orange.jpg&position=right&size=50% 100%
+---?image=AADDS/template/img/bg/orange.jpg&position=right&size=50% 100%
 @title[Current Issues/Restrictions]
 
 
@@ -188,7 +188,7 @@ Current Limitations
 @snapend
 
 
----?image=template/img/bg/blue.jpg&position=left&size=30% 100%
+---?image=AADDS/template/img/bg/blue.jpg&position=left&size=30% 100%
 @title[Multi Region Support]
 
 @snap[west text-white]
@@ -204,7 +204,7 @@ Current Limitations
 @snapend
 
 
----?image=template/img/bg/orange.jpg&position=left&size=30% 100%
+---?image=AADDS/template/img/bg/orange.jpg&position=left&size=30% 100%
 @title[Domain Admin Rights]
 
 @snap[west text-white]
@@ -219,7 +219,7 @@ Current Limitations
 
 @snapend
 
----?image=template/img/bg/pink.jpg&position=left&size=30% 100%
+---?image=AADDS/template/img/bg/pink.jpg&position=left&size=30% 100%
 @title[User Creation & Management]
 
 @snap[west text-white]
@@ -234,7 +234,7 @@ Current Limitations
 
 @snapend
 
----?image=template/img/bg/purple.jpg&position=left&size=30% 100%
+---?image=AADDS/template/img/bg/purple.jpg&position=left&size=30% 100%
 @title[Hybrid Sync]
 
 @snap[west text-white]
@@ -249,7 +249,7 @@ Current Limitations
 
 @snapend
 
----?image=template/img/bg/green.jpg&position=left&size=30% 100%
+---?image=AADDS/template/img/bg/green.jpg&position=left&size=30% 100%
 @title[Custom OUs]
 
 @snap[west text-white]
@@ -264,7 +264,7 @@ Current Limitations
 
 @snapend
 
----?image=template/img/bg/gray.jpg&position=left&size=30% 100%
+---?image=AADDS/template/img/bg/gray.jpg&position=left&size=30% 100%
 @title[Custom GPOs]
 
 @snap[west text-white]
@@ -279,7 +279,7 @@ Current Limitations
 
 @snapend
 
----?image=template/img/bg/blue.jpg&position=left&size=30% 100%
+---?image=AADDS/template/img/bg/blue.jpg&position=left&size=30% 100%
 @title[Kerberos Delegation]
 
 @snap[west text-white]
@@ -294,7 +294,7 @@ Current Limitations
 
 @snapend
 
----?image=template/img/bg/orange.jpg&position=top&size=100% 15%
+---?image=AADDS/template/img/bg/orange.jpg&position=top&size=100% 15%
 
 @title[Other Issues]
 
@@ -358,7 +358,7 @@ Bad Use Cases
 - Disaster Recovery
 @ulend
 @snapend
----?image=template/img/bg/blue.jpg&position=left&size=40% 100%
+---?image=AADDS/template/img/bg/blue.jpg&position=left&size=40% 100%
 @snap[west split-screen-heading text-white span-30]
 Summary
 @snapend
@@ -371,7 +371,7 @@ Summary
 - Lack of Multi-Region support is a big issue
 @ulend
 @snap
----?image=template/img/7004084680_46fea91b78_z.jpg
+---?image=AADDS/template/img/7004084680_46fea91b78_z.jpg
 ## @css[text-white](Questions?)
 
 
@@ -383,7 +383,7 @@ Sam Cogan
 @snapend
 
 @snap[east  span-40]
-![SamCogan](template/img/Sam_Cogan_new_cropped.jpg)
+![SamCogan](AADDS/template/img/Sam_Cogan_new_cropped.jpg)
 @snapend
 
 @snap[west about-bio-details span-60]
@@ -406,11 +406,11 @@ Microsoft Azure MVP
 @snap[south-west template-note text-gray]
 
 
-![MVP](template/img/MVP_Logo_Horizontal_Preferred_Cyan300_CMYK_72ppi.png)
+![MVP](AADDS/template/img/MVP_Logo_Horizontal_Preferred_Cyan300_CMYK_72ppi.png)
 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />
 @snapend
 
----?image=template/img/bg/orange.jpg&position=top&size=100% 15%
+---?image=AADDS/template/img/bg/orange.jpg&position=top&size=100% 15%
 
 @title[Image Attribution]
 
