@@ -306,6 +306,7 @@ Current Limitations
 @ul[split-screen-list](false)
 - Limited support for multi-domain forests sync
 - LDAP support is read only
+- Password Lifetime and Lockout does not sync
 - No support for AAD B2C/B2B Users
 - Limited Regions
 - Expensive for small workloads
