@@ -1,17 +1,6 @@
----?image=AADDS/template/img/892904776_874073003e_o.jpg
+---?image=AADDS/template/img/title.png
 @title[Domain Controllers in the Cloud?]
 
-
-
-@snap[south text-white span-100]
-@size[1.5em](Domain Controllers in the Cloud?)
-@snapend
-
-
-@snap[west headline text-white span-100]
-Azure AD <br> Domain Services<br>
-
-@snapend
 
 ---
 @title[Personal Biography]
@@ -181,8 +170,7 @@ Current Limitations
 - Domain Admin Rights
 - User Creation
 - Hybrid Sync
-- Custom OUs
-- Custom GPOs
+- Custom OUs & GPOs
 - Kerberos Delegation
 @olend
 @snapend
@@ -250,40 +238,27 @@ Current Limitations
 @snapend
 
 ---?image=AADDS/template/img/bg/green.jpg&position=left&size=30% 100%
-@title[Custom OUs]
+@title[Custom OUs & GPOs]
 
 @snap[west text-white]
 @size[3em](5.)
 @snapend
 
 @snap[east span-70]
-<h3>Custom OUs</h3>
+<h3>Custom OUs & GPOs</h3>
 
 @fa[sitemap fa-5x text-green]
 
 
 @snapend
 
----?image=AADDS/template/img/bg/gray.jpg&position=left&size=30% 100%
-@title[Custom GPOs]
 
-@snap[west text-white]
-@size[3em](6.)
-@snapend
-
-@snap[east span-70]
-<h3>Custom GPOs</h3>
-
-@fa[shield fa-5x text-gray]
-
-
-@snapend
 
 ---?image=AADDS/template/img/bg/blue.jpg&position=left&size=30% 100%
 @title[Kerberos Delegation]
 
 @snap[west text-white]
-@size[3em](7.)
+@size[3em](6.)
 @snapend
 
 @snap[east span-70]
