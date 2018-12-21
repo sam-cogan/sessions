@@ -422,6 +422,6 @@ Microsoft Azure MVP
 
 [Clouds](https://flickr.com/photos/34037930@N03/3632622724 "Clouds") flickr photo by [hoojammyflip](https://flickr.com/people/34037930@N03) shared under a [Creative Commons (BY-NC-ND) license](https://creativecommons.org/licenses/by-nc-nd/2.0/)
 
-[October Sunset, taken from Blackfriars Bridge.](https://flickr.com/photos/davebass5/15421364225 "October Sunset, taken from Blackfriars Bridge.") flickr photo by [Dave Pearce (London)](https://flickr.com/people/davebass5) shared under a [Creative Commons (BY-NC-ND) license](https://creativecommons.org/licenses/by-nc-nd/2.0/)
+[Sunshine](https://flickr.com/photos/meramerah/3849023398 "Sunshine") flickr photo by [meramerah](https://flickr.com/people/meramerah) shared under a [Creative Commons (BY) license](https://creativecommons.org/licen
 
 [Question Mark Cookies 1](https://flickr.com/photos/mcleod/7004084680 "Question Mark Cookies 1") flickr photo by [Scott McLeod](https://flickr.com/people/mcleod) shared under a [Creative Commons (BY) license](https://creativecommons.org/licenses/by/2.0/)
