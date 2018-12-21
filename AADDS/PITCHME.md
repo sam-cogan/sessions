@@ -256,7 +256,7 @@ Current Limitations
 @snapend
 
 @snap[east span-70]
-<h3>Custom OUs</h3>
+<h3>Custom OUs & GPOs</h3>
 
 @fa[sitemap fa-5x text-green]
 
