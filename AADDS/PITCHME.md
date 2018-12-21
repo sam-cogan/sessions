@@ -181,8 +181,7 @@ Current Limitations
 - Domain Admin Rights
 - User Creation
 - Hybrid Sync
-- Custom OUs
-- Custom GPOs
+- Custom OUs & GPOs
 - Kerberos Delegation
 @olend
 @snapend
@@ -250,7 +249,7 @@ Current Limitations
 @snapend
 
 ---?image=AADDS/template/img/bg/green.jpg&position=left&size=30% 100%
-@title[Custom OUs]
+@title[Custom OUs & GPOs]
 
 @snap[west text-white]
 @size[3em](5.)
@@ -264,26 +263,12 @@ Current Limitations
 
 @snapend
 
----?image=AADDS/template/img/bg/gray.jpg&position=left&size=30% 100%
-@title[Custom GPOs]
-
-@snap[west text-white]
-@size[3em](6.)
-@snapend
-
-@snap[east span-70]
-<h3>Custom GPOs</h3>
-
-@fa[shield fa-5x text-gray]
-
-
-@snapend
 
 ---?image=AADDS/template/img/bg/blue.jpg&position=left&size=30% 100%
 @title[Kerberos Delegation]
 
 @snap[west text-white]
-@size[3em](7.)
+@size[3em](6.)
 @snapend
 
 @snap[east span-70]
