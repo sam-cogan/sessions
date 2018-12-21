@@ -81,10 +81,10 @@ Microsoft Azure MVP
 
 
 
----?image=AADDS/template/img/15421364225_7dbb63d2f8_o.jpg
+---?image=AADDS/template/img/3849023398_0044c78591_z.jpg
 
 @snap[ mslogo-center]
-![AAD](AADDS/template/img/3849023398_0044c78591_z.jpg )
+![AAD](AADDS/template/img/AzureActiveDirectory_COLOR.svg)
 @snapend
 
 ---?image=AADDS/template/img/goldblum-wired-answers-3272018.png&position=left&size=60% auto
