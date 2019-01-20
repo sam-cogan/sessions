@@ -8,7 +8,7 @@
 #
 
 published : true
-
+pro-menus-hidden : true
 #
 # Theme Setting
 # Doc: https://gitpitch.com/docs/settings/theme
@@ -54,3 +54,4 @@ layout : center
 #
 transition : none
 
+footnote : "2018 Sam Cogan."

@@ -81,10 +81,10 @@ Microsoft Azure MVP
 
 
 
----?image=AADDS/template/img/15421364225_7dbb63d2f8_o.jpg
+---?image=AADDS/template/img/3849023398_0044c78591_z.jpg
 
 @snap[ mslogo-center]
-![AAD](AADDS/template/img/AzureActiveDirectory_COLOR.svg )
+![AAD](AADDS/template/img/AzureActiveDirectory_COLOR.svg)
 @snapend
 
 ---?image=AADDS/template/img/goldblum-wired-answers-3272018.png&position=left&size=60% auto
@@ -181,8 +181,7 @@ Current Limitations
 - Domain Admin Rights
 - User Creation
 - Hybrid Sync
-- Custom OUs
-- Custom GPOs
+- Custom OUs & GPOs
 - Kerberos Delegation
 @olend
 @snapend
@@ -250,40 +249,26 @@ Current Limitations
 @snapend
 
 ---?image=AADDS/template/img/bg/green.jpg&position=left&size=30% 100%
-@title[Custom OUs]
+@title[Custom OUs & GPOs]
 
 @snap[west text-white]
 @size[3em](5.)
 @snapend
 
 @snap[east span-70]
-<h3>Custom OUs</h3>
+<h3>Custom OUs & GPOs</h3>
 
 @fa[sitemap fa-5x text-green]
 
 
 @snapend
 
----?image=AADDS/template/img/bg/gray.jpg&position=left&size=30% 100%
-@title[Custom GPOs]
-
-@snap[west text-white]
-@size[3em](6.)
-@snapend
-
-@snap[east span-70]
-<h3>Custom GPOs</h3>
-
-@fa[shield fa-5x text-gray]
-
-
-@snapend
 
 ---?image=AADDS/template/img/bg/blue.jpg&position=left&size=30% 100%
 @title[Kerberos Delegation]
 
 @snap[west text-white]
-@size[3em](7.)
+@size[3em](6.)
 @snapend
 
 @snap[east span-70]
@@ -417,11 +402,12 @@ Microsoft Azure MVP
 @snap[north text-white span-100]
 @size[1.5em](Image Attribution)
 @snapend
-
+@size[0.5em](
 [The north side](https://flickr.com/photos/alq666/892904776 "The north side") flickr photo by [alq666](https://flickr.com/people/alq666) shared under a [Creative Commons (BY-SA) license](https://creativecommons.org/licenses/by-sa/2.0/)
 
 [Clouds](https://flickr.com/photos/34037930@N03/3632622724 "Clouds") flickr photo by [hoojammyflip](https://flickr.com/people/34037930@N03) shared under a [Creative Commons (BY-NC-ND) license](https://creativecommons.org/licenses/by-nc-nd/2.0/)
 
-[October Sunset, taken from Blackfriars Bridge.](https://flickr.com/photos/davebass5/15421364225 "October Sunset, taken from Blackfriars Bridge.") flickr photo by [Dave Pearce (London)](https://flickr.com/people/davebass5) shared under a [Creative Commons (BY-NC-ND) license](https://creativecommons.org/licenses/by-nc-nd/2.0/)
+[Sunshine](https://flickr.com/photos/meramerah/3849023398 "Sunshine") flickr photo by [meramerah](https://flickr.com/people/meramerah) shared under a [Creative Commons (BY) license](https://creativecommons.org/licenses/by/2.0/)
 
 [Question Mark Cookies 1](https://flickr.com/photos/mcleod/7004084680 "Question Mark Cookies 1") flickr photo by [Scott McLeod](https://flickr.com/people/mcleod) shared under a [Creative Commons (BY) license](https://creativecommons.org/licenses/by/2.0/)
+)
