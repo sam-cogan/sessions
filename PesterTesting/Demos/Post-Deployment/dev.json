@@ -1,0 +1,30 @@
+{
+    "environmentPrefix": "dev",
+    "region": "westeurope",
+    "Networking": {
+        "Subnets": [
+            {
+                "name": "public-subnet",
+                "addressRange": "10.0.2.0/23"
+            },
+            {
+                "name": "private-subnet",
+                "addressRange": "10.0.4.0/22"
+            }
+        ]
+    },
+    "VirtualMachines":[
+        {
+            "name":"dev-vm0",
+            "size":"standard_D1_v2",
+            "subnet": "public-subnet",
+            "region": "westeurope"
+        },
+        {
+            "name":"dev-vm1",
+            "size":"standard_D1_v2",
+            "subnet": "public-subnet",
+            "region": "westeurope"
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+
+{
+    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "environmentPrefix": {
+            "value": "dev"
+        },
+        "numberOfInstances": {
+            "value": 2
+        },
+        "adminPassword": {
+            "value": "CGLbUyT9q070"
+        }
+    }
+}
