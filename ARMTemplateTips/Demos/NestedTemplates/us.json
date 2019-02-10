@@ -6,6 +6,7 @@
         "configuration":{
             "primaryRegion":{
                 "location":"East US",
+                "prefix":"lbd-eus",
                 "vnetName":"lbd-eus-vnet",
                 "diagnosticStorage":"lbddiagstoragteweus"
 
@@ -13,6 +14,7 @@
             },
             "secondaryRegion":{
                 "location":"West US",
+                "prefix":"lbd-wus",
                 "vnetName":"lbd-wus-vnet",
                 "diagnosticStorage":"lbddiagstoragtewus"
                 

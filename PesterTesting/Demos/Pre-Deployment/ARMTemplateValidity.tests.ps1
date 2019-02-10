@@ -1,6 +1,6 @@
 
 param(
-    [string]$templatefolder = '.',
+    [string]$templatefolder = '..\',
     [string]$validationResourceGroup = "PesterRG",
     [string]$validationResourceGroupRegion = "West Europe"
 
@@ -20,7 +20,7 @@ Describe "Online Template Testing" -Tag 'PreDeployment' {
 
     Context "Validate Template" {
         foreach ($templateFile in $templateFiles) {
-            $templateContents = get-content $templatefile
+            $templateContents = get-content $templatefile.FullName
             try {
                 $templateProperties = ($templateContents  | ConvertFrom-Json )
             }

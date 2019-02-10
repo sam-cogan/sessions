@@ -41,7 +41,7 @@
 param (
 	[Parameter(Mandatory = $true)]
 	[System.String]
-	$templateFolder,
+	$templateFolder="..\",
 
 	[Parameter()]
 	[System.String[]]

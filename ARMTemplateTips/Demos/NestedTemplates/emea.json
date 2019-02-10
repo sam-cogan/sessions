@@ -6,6 +6,7 @@
         "configuration":{
             "primaryRegion":{
                 "location":"West Europe",
+                "prefix":"lbd-we",
                 "vnetName":"lbd-we-vnet",
                 "diagnosticStorage":"lbddiagstoragtewe"
 
@@ -13,6 +14,7 @@
             },
             "secondaryRegion":{
                 "location":"North Europe",
+                "prefix":"lbd-ne",
                 "vnetName":"lbd-ne-vnet",
                 "diagnosticStorage":"lbddiagstoragtene"
                 

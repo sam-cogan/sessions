@@ -1,12 +1,13 @@
+cls
 param(
-    [string]$templatefolder = '.'
+    [string]$templatefolder = '..\'
 )
 
 $templateFiles = Get-ChildItem -Path $templatefolder\* -Filter "*.json" -recurse -File | Where-Object -FilterScript {(Get-Content -Path $_.FullName -Raw) -ilike "*schema.management.azure.com/*/deploymentTemplate.json*"}
 
 foreach ($templateFile in $templateFiles) {
     Describe "Testing Template Content: $templateFile" -Tag 'PreDeployment' {
-        $templateContents = get-content $templatefile
+        $templateContents = get-content $templatefile.FullName
         try {
             $templateProperties = ($templateContents  | ConvertFrom-Json )
         }
@@ -17,7 +18,7 @@ foreach ($templateFile in $templateFiles) {
         Context "Template Syntax" {
 
             It "should be less than 1 Mb" {
-                Get-Item $templateFile| Select-Object -ExpandProperty Length | Should -BeLessOrEqual 1073741824
+                Get-Item $templateFile.FullName| Select-Object -ExpandProperty Length | Should -BeLessOrEqual 1073741824
             }
       
             It "Converts from JSON" {
