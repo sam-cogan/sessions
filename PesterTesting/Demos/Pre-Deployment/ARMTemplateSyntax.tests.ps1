@@ -1,7 +1,5 @@
+$templateFolder=(Split-path -parent $MyInvocation.MyCommand.Path).Replace('Pre-Deployment','')
 
-param(
-    [string]$templatefolder = '.'
-)
 
 write-host $templateFolder
 $templateFiles = Get-ChildItem -Path $templatefolder\* -Filter "*.json" -recurse -File | Where-Object -FilterScript {(Get-Content -Path $_.FullName -Raw) -ilike "*schema.management.azure.com/*/deploymentTemplate.json*"}
