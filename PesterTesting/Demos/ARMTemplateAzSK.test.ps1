@@ -50,7 +50,7 @@ param (
 
 $templateFiles = Get-ChildItem -Path $templatefolder\* -Filter "*.json" -recurse -File | Where-Object -FilterScript {(Get-Content -Path $_.FullName -Raw) -ilike "*schema.management.azure.com/*/deploymentTemplate.json*"}
 
-Describe 'ARM template best practices' -Tag 'PreDeploymentSecurity' {
+Describe -Tag 'PreDeploymentSecurity' 'ARM template best practices'  {
 	Context 'Review ARM Template Security Status' {
         foreach ($templateFile in $templateFiles) {
 

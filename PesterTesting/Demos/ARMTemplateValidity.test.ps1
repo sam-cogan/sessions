@@ -9,7 +9,7 @@ param(
 $templateFiles = Get-ChildItem -Path $templatefolder\* -Filter "*.json" -recurse -File | Where-Object -FilterScript {(Get-Content -Path $_.FullName -Raw) -ilike "*schema.management.azure.com/*/deploymentTemplate.json*"}
 
 
-Describe "Online Template Testing" -Tag 'PreDeploymentOnline'  {
+Describe  -Tag 'PreDeploymentOnline' "Online Template Testing" {
 
     BeforeAll {
         $context = $null

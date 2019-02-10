@@ -1,12 +1,13 @@
 
 param(
-    [string]$templatefolder = '..\'
+    [string]$templatefolder = '.'
 )
 
+write-host $templateFolder
 $templateFiles = Get-ChildItem -Path $templatefolder\* -Filter "*.json" -recurse -File | Where-Object -FilterScript {(Get-Content -Path $_.FullName -Raw) -ilike "*schema.management.azure.com/*/deploymentTemplate.json*"}
 
 foreach ($templateFile in $templateFiles) {
-    Describe "Testing Template Content: $templateFile" -Tag 'PreDeployment' {
+    Describe  -Tag 'PreDeployment' "Testing Template Content: $templateFile" {
         $templateContents = get-content $templatefile.FullName
         try {
             $templateProperties = ($templateContents  | ConvertFrom-Json )
