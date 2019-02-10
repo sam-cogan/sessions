@@ -1,4 +1,4 @@
-cls
+
 param(
     [string]$templatefolder = '..\'
 )
