@@ -1,0 +1,186 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "prefix": {
+           "type": "string",
+           "metadata": {
+                "description": "Prefix for environment"
+            }
+        },
+        "numberOfInstances": {
+           "type": "int",
+           "metadata": {
+                "description": ""
+            }
+        },
+        "password": {
+           "type": "securestring",
+           "metadata": {
+                "description": ""
+            }
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Network/networkSecurityGroups",
+            "apiVersion": "2018-08-01",
+            "name": "public-subnet-nsg",
+            "location": "[resourceGroup().location]",
+            "properties": {
+                "securityRules": []
+            }
+        },
+        {
+            "type": "Microsoft.Network/networkSecurityGroups",
+            "apiVersion": "2018-08-01",
+            "name": "private-subnet-nsg",
+            "location": "[resourceGroup().location]",
+            "properties": {
+                "securityRules": []
+            }
+        },
+        {
+            "type": "Microsoft.Network/virtualNetworks",
+            "apiVersion": "2018-08-01",
+            "name": "[concat(parameters('prefix'),'-vnet')]",
+            "location": "[resourceGroup().location]",
+            "dependsOn": [
+                "Microsoft.Network/networkSecurityGroups/PUBLIC-SUBNET-NSG",
+                "Microsoft.Network/networkSecurityGroups/PRIVATE-SUBNET-NSG"
+            ],
+            "tags": {
+                "displayName": "[concat(parameters('prefix'),'-vnet')]"
+            },
+            "properties": {
+                "addressSpace": {
+                    "addressPrefixes": [
+                        "10.0.0.0/16"
+                    ]
+                },
+                "subnets": [
+                    {
+                        "name": "public-subnet",
+                        "properties": {
+                            "addressPrefix": "10.0.2.0/23",
+                            "networkSecurityGroup": {
+                                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', 'public-subnet-nsg')]"
+                              }
+                        }
+                    },
+                    {
+                        "name": "private-subnet",
+                        "properties": {
+                            "addressPrefix": "10.0.4.0/22",
+                            "networkSecurityGroup": {
+                                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', 'private-subnet-nsg')]"
+                              }
+                        }
+                    }
+                ]
+            }
+        },
+
+        {
+            "type": "Microsoft.Storage/storageAccounts",
+            "apiVersion": "2018-07-01",
+            "name": "lbddevdiagstg",
+            "location": "[resourceGroup().location]",
+            "tags": {
+                "displayName": "lbddevdiagstg"
+            },
+            "sku": {
+                "name": "Standard_LRS"
+            },
+            "kind": "StorageV2",
+            "properties":{
+            "supportsHttpsTrafficOnly": true
+            }
+        },  
+        {
+            "apiVersion": "2018-08-01",
+            "type": "Microsoft.Network/networkInterfaces",
+            "name": "[concat(parameters('prefix'),'-vm', copyindex(),'-nic')]",
+            "location": "[resourceGroup().location]",
+            "copy": {
+                "name": "nicLoop",
+                "count": "[parameters('numberOfInstances')]"
+              },
+            "dependsOn": [
+                "[concat('Microsoft.Network/virtualNetworks/',parameters('prefix'),'-vnet')]"
+            ],
+            "tags": {
+                "displayName": "[concat(parameters('prefix'),'-vm', copyindex(),'-nic')]"
+            },
+            "properties": {
+                "ipConfigurations": [
+                    {
+                        "name": "ipconfig1",
+                        "properties": {
+                            "privateIPAllocationMethod": "Dynamic",
+                            "subnet": {
+                                "id": "[concat(resourceId('Microsoft.Network/virtualNetworks', concat(parameters('prefix'), '-vnet')), '/subnets/private-subnet')]"
+                            }
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "apiVersion": "2018-10-01",
+            "type": "Microsoft.Compute/virtualMachines",
+            "name": "[concat(parameters('prefix'),'-vm', copyindex())]",
+            "location": "[resourceGroup().location]",
+            "copy": {
+                "name": "vmLoop",
+                "count": "[parameters('numberOfInstances')]"
+              },
+            "dependsOn": [
+                "[concat('Microsoft.Storage/storageAccounts/lbddevdiagstg')]",
+                "[concat('Microsoft.Network/networkInterfaces/',parameters('prefix'),'-vm', copyindex(),'-nic')]"
+            ],
+            "tags": {
+                "displayName": "[concat(parameters('prefix'),'-vm', copyindex())]"
+            },
+            "properties": {
+                "hardwareProfile": {
+                    "vmSize": "standard_D1_v2"
+                },
+                "osProfile": {
+                    "computerName": "[concat(parameters('prefix'),'-vm', copyindex())]",
+                    "adminUsername": "scadmin",
+                    "adminPassword": "[parameters('password')]"
+                },
+                "storageProfile": {
+                    "imageReference": {
+                        "publisher": "MicrosoftWindowsServer",
+                        "offer": "WindowsServer",
+                        "sku": "2012-R2-Datacenter",
+                        "version": "latest"
+                    },
+                    "osDisk": {
+                        "createOption": "FromImage"
+                    }
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "id": "[resourceId('Microsoft.Network/networkInterfaces', concat(parameters('prefix'),'-vm', copyindex(),'-nic'))]"
+                        }
+                    ]
+                },
+                "diagnosticsProfile": {
+                    "bootDiagnostics": {
+                        "enabled": true,
+                        "storageUri": "[concat('http://', 'lbddevdiagstg', '.blob.core.windows.net')]"
+                    }
+                }
+            },
+            "resources": [
+               
+            ]
+        }
+    ],
+    "outputs": {}
+}
