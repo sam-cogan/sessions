@@ -12,7 +12,7 @@ param(
 $here = Split-Path -Parent $MyInvocation.MyCommand.Path
 $template = Split-Path -Leaf $here
 
-Describe "Virtual Machine Tests" -Tags "PostDeployment" {
+Describe  -Tags "SecurityTests" "Virtual Machine Tests"{
 
     $VMs = Get-AzureRmVM -ResourceGroupName $ResourceGroupName
 
@@ -79,7 +79,7 @@ Describe "Virtual Machine Tests" -Tags "PostDeployment" {
     }
 }
 
-Describe "Network Security Group Tests" -Tags "PostDeployment" {
+Describe -Tags "SecurityTests" "Network Security Group Tests" {
 
     $NSGS = Get-AzureRmNetworkSecurityGroup -ResourceGroupName $ResourceGroupName
     
@@ -101,7 +101,7 @@ Describe "Network Security Group Tests" -Tags "PostDeployment" {
 }
 
 
-Describe "Storage Account Tests" -Tags "PostDeployment" {
+Describe -Tags "SecurityTests" "Storage Account Tests"{
     $storageAccounts = Get-AzureRmStorageAccount -ResourceGroupName $ResourceGroupName
 
     foreach ($storageAccount in $storageAccounts) {
@@ -113,7 +113,7 @@ Describe "Storage Account Tests" -Tags "PostDeployment" {
 }
 
 
-Describe "Azure SQL Tests" -Tags "PostDeployment" {
+Describe -Tags "SecurityTests" "Azure SQL Tests" {
     $sqlServers = Get-AzureRmSqlServer -ResourceGroupName $ResourceGroupName
     foreach ($sqlserver in $sqlServers) {
         $sqlDatabases = Get-AzureRmSqlDatabase -ServerName $sqlServer.ServerName -ResourceGroupName $ResourceGroupName

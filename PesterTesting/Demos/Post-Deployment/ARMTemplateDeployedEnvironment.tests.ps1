@@ -6,7 +6,7 @@ param(
 $infrastructure = (Get-Content $environmentFile | ConvertFrom-Json )
 $environmentPrefix = $infrastructure.environmentPrefix
 
-Describe  -Tags "InfrastructureTests" "Resource Group" {
+Describe -Tags "InfrastructureTests" "Resource Group" {
 
     context "Resource Group Settings" {
         $resourceGroup = Get-AzureRmResourceGroup -Name "$environmentPrefix-rg" -ErrorAction SilentlyContinue
@@ -22,7 +22,7 @@ Describe  -Tags "InfrastructureTests" "Resource Group" {
 
 }
 
-Describe "Networking Tests" -Tags "PostDeployment" {
+Describe -Tags "InfrastructureTests" "Networking Tests" {
 
     $vNet = Get-AzureRmVirtualNetwork -Name "$environmentPrefix-vNet" -ResourceGroupName "$environmentPrefix-rg"
 
@@ -72,7 +72,7 @@ Describe "Networking Tests" -Tags "PostDeployment" {
 
 }
 
-Describe "Virtual Machine Test" -Tags "PostDeployment" {
+Describe -Tags "InfrastructureTests"  "Virtual Machine Test" {
     $vms = get-azurermvm -ResourceGroupName $environmentPrefix-rg
 
 
