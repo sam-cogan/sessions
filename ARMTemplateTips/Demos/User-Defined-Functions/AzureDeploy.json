@@ -17,6 +17,19 @@
         {
             "namespace": "lambdaToys",
             "members": {
+                "getStorageName":{
+                    "parameters": [
+                        {
+                            "name": "prefix",
+                            "type": "string"
+                        }
+                    
+                    ],
+                    "output":{
+                        "type":"string",
+                        "value":"[take(concat(toLower(replace(parameters('prefix'),' ','-')), uniqueString(resourceGroup().id,parameters('prefix'))),15)]"    
+                    }
+                },
                 "getNicName": {
                     "parameters": [
                         {
@@ -71,6 +84,19 @@
                 ]
             }
         },
+        {
+            "type": "Microsoft.Storage/storageAccounts",
+            "apiVersion": "2018-07-01",
+            "name": "[lambdaToys.getStorageName(parameters('prefix'))]",
+            "location": "[resourceGroup().location]",
+            "tags": {
+                "displayName": "[lambdaToys.getStorageName(parameters('prefix'))]"
+            },
+            "sku": {
+                "name": "Standard_LRS"
+            }
+            "kind": "StorageV2"
+        }
         {
             "apiVersion": "2015-06-15",
             "type": "Microsoft.Network/networkInterfaces",
