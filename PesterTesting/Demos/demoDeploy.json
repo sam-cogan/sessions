@@ -90,6 +90,9 @@
         "sku": {
             "name": "Standard_LRS"
         },
+        "properties":{
+          "supportsHttpsTrafficOnly":true
+        },
         "kind": "StorageV2"
     },
     {
