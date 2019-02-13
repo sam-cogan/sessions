@@ -6,7 +6,7 @@ param(
 $infrastructure = (Get-Content $environmentFile | ConvertFrom-Json )
 $environmentPrefix = $infrastructure.environmentPrefix
 
-Describe "Resource Group" -Tags "PostDeployment" {
+Describe  -Tags "InfrastructureTests" "Resource Group" {
 
     context "Resource Group Settings" {
         $resourceGroup = Get-AzureRmResourceGroup -Name "$environmentPrefix-rg" -ErrorAction SilentlyContinue
