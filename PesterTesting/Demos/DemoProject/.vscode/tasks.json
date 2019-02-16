@@ -1,0 +1,46 @@
+{
+	"version": "2.0.0",
+	"command": "c:\\windows\\System32\\WindowsPowershell\\v1.0\\PowerShell.exe",
+	"isShellCommand": true,
+	"showOutput": "always",
+    "args": [
+        "-NoProfile", "-ExecutionPolicy", "Bypass"
+    ],
+    "tasks": [
+        {
+            "taskName": "Watch.Project.Single",
+            "suppressTaskName": true,
+            "args": [
+                "Write-Host 'Watching Single Project Files';",
+                "Import-Module -Name Pester  -Force;",
+                "Import-Module -Name PowerShellGuard;",
+                "(gci \"${workspaceRoot}\\templates\\*.json\" -recurse).Foreach{ New-Guard -Path $_.FullName -TestPath \"${workspaceRoot}\\Tests\\$($_.basename).tests.ps1\" -TestCommand {Write-Host \"Invoking Watch.Project.Single\"; Invoke-Pester -PesterOption @{IncludeVSCodeMarker=$true}} -ErrorAction SilentlyContinue};",
+                "(gci \"${workspaceRoot}\\tests\\*.ps1\").Foreach{ New-Guard -Path $_.FullName -TestPath $_.FullName -TestCommand {Write-Host \"Invoking Watch.Project.Single\"; Invoke-Pester -PesterOption @{IncludeVSCodeMarker=$true}} -ErrorAction SilentlyContinue};",
+                "Wait-Guard"
+            ],
+            "isBackground": true,
+            "problemMatcher": [
+                {
+                    "owner": "Watch.Project.Single",
+                    "fileLocation": "absolute",
+                    "pattern": [
+                        {
+                            "regexp": "^\\s*(\\[-\\]\\s*.*?)(\\d+)ms\\s*$",
+                            "message": 1
+                        },
+                        {
+                            "regexp": "^\\s+at\\s+[^,]+,\\s*(.*?):\\s+line\\s+(\\d+)$",
+                            "file": 1,
+                            "line": 2
+                        }
+                    ],
+                    "watching": {
+                        "activeOnStart": true,
+                        "beginsPattern": "^Invoking Watch\\.Project\\.Single$",
+                        "endsPattern": "^Passed:\\s\\d+\\sFailed:\\s\\d+\\sSkipped:\\s\\d+\\sPending:\\s\\d+\\sInconclusive:\\s\\d+\\s$"
+                    }
+                }
+            ]
+        }
+    ]
+}

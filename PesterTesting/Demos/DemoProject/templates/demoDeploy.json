@@ -1,0 +1,163 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "environmentPrefix": {
+      "type": "string"
+    },
+    "numberOfInstances": {
+       "type": "int"
+    },
+    "adminPassword": {
+       "type": "securestring"
+    }
+
+  },
+  "variables": {
+    "Windows": {
+        "publisher": "MicrosoftWindowsServer",
+        "offer": "WindowsServer",
+        "sku": "2016-Datacenter",
+        "version": "latest"
+      },
+      "PublicSubnetRef": "[resourceId('Microsoft.Network/virtualNetworks/subnets',concat(parameters('environmentPrefix'),'-vNet'),'public-subnet')]"
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Network/networkSecurityGroups",
+      "apiVersion": "2018-08-01",
+      "name": "public-subnet-nsg",
+      "location": "[resourceGroup().location]",
+      "properties": {
+        "securityRules": []
+      }
+    },
+    {
+      "type": "Microsoft.Network/networkSecurityGroups",
+      "apiVersion": "2018-08-01",
+      "name": "private-subnet-nsg",
+      "location": "[resourceGroup().location]",
+      "properties": {
+        "securityRules": []
+      }
+    },
+    {
+      "type": "Microsoft.Network/virtualNetworks",
+      "apiVersion": "2018-08-01",
+      "name": "[concat(parameters('environmentPrefix'),'-vNet')]",
+      "location": "[resourceGroup().location]",
+      "dependsOn": [
+        "[concat('Microsoft.Network/networkSecurityGroups/', 'public-subnet-nsg')]",
+        "[concat('Microsoft.Network/networkSecurityGroups/', 'private-subnet-nsg')]"
+      ],
+      "tags": {
+        "displayName": "concat(parameters('environmentPrefix'),'-vNet')"
+      },
+      "properties": {
+        "addressSpace": {
+          "addressPrefixes": ["10.0.0.0/16"]
+        },
+        "subnets": [
+          {
+            "name": "public-subnet",
+            "properties": {
+              "addressPrefix": "10.0.2.0/23",
+              "networkSecurityGroup": {
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', 'public-subnet-nsg')]"
+              }
+            }
+          },
+          {
+            "name": "private-subnet",
+            "properties": {
+              "addressPrefix": "10.0.4.0/22",
+              "networkSecurityGroup": {
+                "id": "[resourceId('Microsoft.Network/networkSecurityGroups', 'private-subnet-nsg')]"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+        "type": "Microsoft.Storage/storageAccounts",
+        "apiVersion": "2018-07-01",
+        "name": "[concat(parameters('environmentPrefix'),uniqueString(parameters('environmentPrefix')))]",
+        "location": "[resourceGroup().location]",
+        "tags": {
+            "displayName": "[concat(parameters('environmentPrefix'),uniqueString(parameters('environmentPrefix')))]"
+        },
+        "sku": {
+            "name": "Standard_LRS"
+        },
+        "properties":{
+          "supportsHttpsTrafficOnly":true
+        },
+        "kind": "StorageV2"
+    },
+    {
+        "type": "Microsoft.Network/networkInterfaces",
+        "name": "[concat(parameters('environmentPrefix'),'-nic',copyindex())]",
+        "apiVersion": "2016-03-30",
+        "location": "[resourceGroup().location]",
+        "copy": {
+          "name": "nicLoop",
+          "count": "[parameters('numberOfInstances')]"
+        },
+        "dependsOn": [
+          "[concat(parameters('environmentPrefix'),'-vNet')]"
+        ],
+        "properties": {
+          "ipConfigurations": [
+            {
+              "name": "ipconfig1",
+              "properties": {
+                "privateIPAllocationMethod": "Dynamic",
+                "subnet": {
+                  "id": "[variables('publicSubnetRef')]"
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "type": "Microsoft.Compute/virtualMachines",
+        "name": "[concat(parameters('environmentPrefix'),'-vm',copyindex())]",
+        "apiVersion": "2016-04-30-preview",
+        "location": "[resourceGroup().location]",
+        "copy": {
+          "name": "virtualMachineLoop",
+          "count": "[parameters('numberOfInstances')]"
+        },
+        "dependsOn": [
+          "nicLoop"
+        ],
+        "properties": {
+          "hardwareProfile": {
+            "vmSize": "Standard_D1_v2"
+          },
+          "osProfile": {
+            "computerName": "[concat(parameters('environmentPrefix'),'-vm', copyIndex())]",
+            "adminUsername": "scadmin",
+            "adminPassword": "[parameters('adminPassword')]"
+          },
+          "storageProfile": {
+            "imageReference": "[variables('Windows')]",
+            "osDisk": {
+              "createOption": "FromImage"
+            }
+          },
+          "networkProfile": {
+            "networkInterfaces": [
+              {
+                "id": "[resourceId('Microsoft.Network/networkInterfaces',concat(parameters('environmentPrefix'),'-nic',copyindex()))]"
+              }
+            ]
+          }
+        }
+      }
+
+  ],
+  "outputs": {}
+}
