@@ -64,7 +64,7 @@ $VerbosePreference="Continue"
 # }
 $SqlServer=[Environment]::GetEnvironmentVariable("SQLServer")  
 $Database=[Environment]::GetEnvironmentVariable("Database")  
-$SqlUsername =$(Get-AzureFunctionKeyVaultSecret -SecretIdentifier "https://sqlagentdemokv.vault.azure.net/secrets/sqlusername/a5d0ed66d56945b8826ff6e1c8a97b8e").value
+$SqlUsername =$(Get-AzureFunctionKeyVaultSecret -SecretIdentifier "https://sqlagentdemokv.vault.azure.net/secrets/sqlusername/8a0a40ce09b24aa4a3c833fe12a7d62c").value
 $SqlPass =$(Get-AzureFunctionKeyVaultSecret -SecretIdentifier "https://sqlagentdemokv.vault.azure.net/secrets/sqlpassword/647bda0f9b094a57a835eb7fe880f8ec").value
 
 write-output "username  $SqlUsername"
