@@ -169,7 +169,7 @@
             "metadata": {
                 "description": "The description of the configuration."
           
-              }
+              } 
         },
         "jobid": {
             "type": "string",
@@ -677,7 +677,7 @@
                     "type": "ChangeCount",
                     "value": "1",
                     "cooldown": "PT1M"
-                  }
+                  }  
                 },
                 {
                   "metricTrigger": {
@@ -700,8 +700,8 @@
                   }
                 }
               ]
-            }
-          ]
+            }  
+          ] 
         }
       }
     ],
@@ -714,5 +714,5 @@
 			"value": "[reference(variables('publicIPAddressID'),providers('Microsoft.Network','publicIPAddresses').apiVersions[0]).ipAddress]",
 			"type": "string"
 		}
-	}
+	}    
 }

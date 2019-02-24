@@ -1,0 +1,36 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        
+    },
+    "variables": {
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Network/publicIPAddresses",
+            "apiVersion": "2018-08-01",
+            "name": "ignitedemoipaddress",
+            "location": "[resourceGroup().location]",
+            "tags": {
+                "displayName": "IPAddress1"
+            },
+            "properties": {
+                "publicIPAllocationMethod": "Dynamic",
+                "dnsSettings": {
+                    "domainNameLabel": "ignitedemoipaddress"
+                }
+            }
+        }
+    ],
+    "outputs": {
+        "name": {
+            "type": "string",
+            "value": "[resourceId('Microsoft.Network/publicIPAddresses','ignitedemoipaddress')]"
+          },
+          "dnsName": {
+            "type": "string",
+            "value" : "[reference('ignitedemoipaddress').dnsSettings.fqdn]"
+          }
+    }
+}
