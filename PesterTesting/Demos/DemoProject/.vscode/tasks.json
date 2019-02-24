@@ -8,7 +8,7 @@
     ],
     "tasks": [
         {
-            "taskName": "Watch.Project.Single",
+            "label": "Watch.Project.Single",
             "suppressTaskName": true,
             "args": [
                 "Write-Host 'Watching Single Project Files';",
@@ -20,8 +20,51 @@
             ],
             "isBackground": true,
             "problemMatcher": [
-                {
+                { 
                     "owner": "Watch.Project.Single",
+                    "fileLocation": "absolute",
+                    "pattern": [
+                        {
+                            "regexp": "^\\s*(\\[-\\]\\s*.*?)(\\d+)ms\\s*$",
+                            "message": 1
+                        },
+                        {
+                            "regexp": "^\\s+at\\s+[^,]+,\\s*(.*?):\\s+line\\s+(\\d+)$",
+                            "file": 1,
+                            "line": 2
+                        }
+                    ],
+                    "background": {
+                        "activeOnStart": true,
+                        "beginsPattern": "^Invoking Watch\\.Project\\.Single$",
+                        "endsPattern": "^Passed:\\s\\d+\\sFailed:\\s\\d+\\sSkipped:\\s\\d+\\sPending:\\s\\d+\\sInconclusive:\\s\\d+\\s$"
+                    }
+                }
+            ]
+        },
+        {
+            "label": "Watch.Project",
+            "type":"shell",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": true
+            },
+            "isTestCommand": true,
+            "suppressTaskName": true,
+            "args": [
+                "Write-Host 'Watching Project';",
+                "Import-Module -Name Pester  -Force;",
+                "Import-Module -Name PowerShellGuard;",
+                "New-Guard -Path \"${workspaceRoot}\" -PathFilter \"*.json\" -MonitorSubdirectories -TestPath \"${workspaceRoot}\\tests\" -TestCommand {Write-Host \"Invoking Watch.Project\"; Invoke-Pester -PesterOption @{IncludeVSCodeMarker=$true}} -Wait;"
+            ],
+            "isBackground": true,
+            "problemMatcher": [
+                {
+                    "owner": "Watch.Project",
                     "fileLocation": "absolute",
                     "pattern": [
                         {
@@ -36,7 +79,7 @@
                     ],
                     "watching": {
                         "activeOnStart": true,
-                        "beginsPattern": "^Invoking Watch\\.Project\\.Single$",
+                        "beginsPattern": "^Invoking Watch\\.Project$",
                         "endsPattern": "^Passed:\\s\\d+\\sFailed:\\s\\d+\\sSkipped:\\s\\d+\\sPending:\\s\\d+\\sInconclusive:\\s\\d+\\s$"
                     }
                 }
@@ -44,3 +87,4 @@
         }
     ]
 }
+
