@@ -5,7 +5,7 @@ $credentialName="dbadmin"
 $outputDatebase=Get-AzureRmSqlDatabase -DatabaseName "OutputDatabase" -ResourceGroupName "SQLAgentDemos" -ServerName "SQLAgentDemo" 
 
 Write-Output "Creating a new job"
-$JobName = "GetFragmentation4"
+$JobName = "GetFragmentation"
 $Job = $JobAgent | New-AzureRmSqlElasticJob -Name $JobName -RunOnce
 $Job
 
