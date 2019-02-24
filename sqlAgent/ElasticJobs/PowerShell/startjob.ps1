@@ -4,7 +4,7 @@ $jobexecution= Start-AzureRmSqlElasticJob -JobName $jobName -ResourceGroupName "
 $jobexecution
 
 
-$jobName="GetFragmentation"
+# $jobName="GetFragmentation"
 
-$jobexecution= Start-AzureRmSqlElasticJob -JobName $jobName -ResourceGroupName "SQLAgentDemos" -ServerName "SQLAgentDemo" -AgentName "DemoJobAgent"
-$jobexecution
+# $jobexecution= Start-AzureRmSqlElasticJob -JobName $jobName -ResourceGroupName "SQLAgentDemos" -ServerName "SQLAgentDemo" -AgentName "DemoJobAgent"
+# $jobexecution
