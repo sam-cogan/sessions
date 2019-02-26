@@ -1,5 +1,6 @@
 param(
     # JSon File Describing Environment
+    [Parameter(Mandatory)]
     [string]$environmentFile
 )
 
