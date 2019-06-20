@@ -1,12 +1,12 @@
-$jobAgent= Get-AzureRmSqlElasticJobAgent -ResourceGroupName "SQLAgentDemos" -ServerName "SQLAgentDemo" -Name "DemoJobAgent"
+$jobAgent= Get-AzSqlElasticJobAgent -ResourceGroupName "SQLAgentDemos" -ServerName "SQLAgentDemo" -Name "DemoJobAgent"
 $serverGroupName="ServerGroup1"
 $credentialName="dbadmin"
 
-$outputDatebase=Get-AzureRmSqlDatabase -DatabaseName "OutputDatabase" -ResourceGroupName "SQLAgentDemos" -ServerName "SQLAgentDemo" 
+$outputDatebase=Get-AzSqlDatabase -DatabaseName "OutputDatabase" -ResourceGroupName "SQLAgentDemos" -ServerName "SQLAgentDemo" 
 
 Write-Output "Creating a new job"
 $JobName = "GetFragmentation"
-$Job = $JobAgent | New-AzureRmSqlElasticJob -Name $JobName -RunOnce
+$Job = $JobAgent | New-AzSqlElasticJob -Name $JobName -RunOnce
 $Job
 
 
@@ -33,4 +33,4 @@ ORDER BY indexstats.avg_fragmentation_in_percent desc
 "@
 
 
-$Job | Add-AzureRmSqlElasticJobStep -Name "step1" -TargetGroupName $serverGroupName -CredentialName $credentialName -CommandText $SQLCommandString -OutputDatabaseObject $outputDatebase -OutputCredentialName $credentialName -OutputTableName "Fragmentation4" -OutputSchemaName "dbo" 
+$Job | Add-AzSqlElasticJobStep -Name "step1" -TargetGroupName $serverGroupName -CredentialName $credentialName -CommandText $SQLCommandString -OutputDatabaseObject $outputDatebase -OutputCredentialName $credentialName -OutputTableName "Fragmentation4" -OutputSchemaName "dbo" 

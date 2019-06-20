@@ -2,8 +2,8 @@ $resourceGroup="SQLAgentDemos"
 $ServerName= "SQLAgentDemo" 
 $AgentName= "DemoJobAgent"
 
-Get-AzureRmSqlElasticJob -ResourceGroupName $resourceGroup -ServerName $ServerName -AgentName $AgentName | Remove-AzureRmSqlElasticJob -Force
+Get-AzSqlElasticJob -ResourceGroupName $resourceGroup -ServerName $ServerName -AgentName $AgentName | Remove-AzSqlElasticJob -Force
 
-Remove-AzureRmSqlElasticJobTargetGroup -Name ServerGroup1 -ResourceGroupName $resourceGroup -ServerName $ServerName -AgentName $AgentName -Force
+Remove-AzSqlElasticJobTargetGroup -Name ServerGroup1 -ResourceGroupName $resourceGroup -ServerName $ServerName -AgentName $AgentName -Force
 
-Get-AzureRmSqlElasticJobCredential  -ResourceGroupName $resourceGroup -ServerName $ServerName -AgentName $AgentName | Remove-AzureRmSqlElasticJobCredential 
+Get-AzSqlElasticJobCredential  -ResourceGroupName $resourceGroup -ServerName $ServerName -AgentName $AgentName | Remove-AzSqlElasticJobCredential 

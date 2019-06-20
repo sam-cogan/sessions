@@ -2,10 +2,10 @@
 # - Create the master user login
 # - Create the master user from master user login
 # - Create the job user login
-$TargetServer = Get-AzureRmSqlServer -ResourceGroupName SQLAgentDemos -ServerName sqlagentdemo
-$DB1=Get-AzureRmSqlDatabase -ResourceGroupName SQLAgentDemos -DatabaseName "sqlAgentDemoDB01" -ServerName $TargetServer.ServerName
-$DB2=Get-AzureRmSqlDatabase -ResourceGroupName SQLAgentDemos -DatabaseName "sqlAgentDemoDB02" -ServerName $TargetServer.ServerName
-$DB3=Get-AzureRmSqlDatabase -ResourceGroupName SQLAgentDemos -DatabaseName "OutputDatabase" -ServerName $TargetServer.ServerName
+$TargetServer = Get-AzSqlServer -ResourceGroupName SQLAgentDemos -ServerName sqlagentdemo
+$DB1=Get-AzSqlDatabase -ResourceGroupName SQLAgentDemos -DatabaseName "sqlAgentDemoDB01" -ServerName $TargetServer.ServerName
+$DB2=Get-AzSqlDatabase -ResourceGroupName SQLAgentDemos -DatabaseName "sqlAgentDemoDB02" -ServerName $TargetServer.ServerName
+$DB3=Get-AzSqlDatabase -ResourceGroupName SQLAgentDemos -DatabaseName "OutputDatabase" -ServerName $TargetServer.ServerName
 
 $AdminLogin="DBAdmin"
 $AdminPassword="4IvufzC64R3z"

@@ -50,27 +50,14 @@
         LASTEDIT: Oct 8th, 2014 
     #>
 
-    param(
-                           
-    
-
-        [parameter(Mandatory=$False)]
-        [int] $SqlServerPort = 1433,
-        
-        [parameter(Mandatory=$False)]
-        [boolean] $RebuildOffline = $False,
-
-        [parameter(Mandatory=$False)]
-        [string] $Table
-                
-    )
+  param($request, $TriggerMetadata)
 
     $VerbosePreference="Continue"
 
     # # Get the stored username and password from the Automation credential
     # $SqlCredential = Get-AutomationPSCredential -Name $SQLCredentialName
-
-
+$SqlServerPort = 1433
+$RebuildOffline = $False
 
     # if ($SqlCredential -eq $null)
     # {

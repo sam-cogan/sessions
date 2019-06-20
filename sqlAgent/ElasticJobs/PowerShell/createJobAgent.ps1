@@ -1,3 +1,3 @@
 Write-Output "Creating job agent..."
 $AgentName = "sqlDemoAgent"
-$JobAgent = $JobDatabase | New-AzureRmSqlElasticJobAgent -Name $AgentName
+$JobAgent = $JobDatabase | New-AzSqlElasticJobAgent -Name $AgentName

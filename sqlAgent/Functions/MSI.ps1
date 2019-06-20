@@ -1,18 +1,15 @@
-param(
-                           
-    
+  param($request, $TriggerMetadata)
 
-    [parameter(Mandatory=$False)]
-    [int] $SqlServerPort = 1433,
-    
-    [parameter(Mandatory=$False)]
-    [boolean] $RebuildOffline = $False,
+    $VerbosePreference="Continue"
 
-    [parameter(Mandatory=$False)]
-    [string] $Table
-            
-)
+    # # Get the stored username and password from the Automation credential
+    # $SqlCredential = Get-AutomationPSCredential -Name $SQLCredentialName
+$SqlServerPort = 1433
+$RebuildOffline = $False
 
+if ($env:MSI_SECRET -and (Get-Module -ListAvailable Az.Accounts)) {
+    Connect-AzAccount -Identity
+}
 
 Function Get-AzureFunctionKeyVaultSecret {
 [CmdletBinding()]
@@ -22,31 +19,7 @@ param (
 [Parameter(Mandatory)]$SecretIdentifier
 )
 
-if (-not $EXECUTION_CONTEXT_FUNCTIONNAME) {write-error "Azure Function Environment not detected. ";return}
 
-# Managed Services Identity Variables
-$MSIEndpoint = $env:MSI_ENDPOINT
-if (-not $MSIEndpoint) {write-error "No Managed Services Identity detected. You must configure one first for your Azure Function. ";return}
-
-$MSISecret = $env:MSI_SECRET
-
-# Vault URI to get AuthN Token
-$vaultTokenURI = 'https://vault.azure.net&api-version=2017-09-01'
-$vaultSecretURI = $secretIdentifier + '/?api-version=2015-06-01'
-# Create AuthN Header with our Function App Secret
-$header = @{'Secret' = $MSIsecret}
-
-# Get Key Vault AuthN Token
-$authenticationResult = Invoke-RestMethod -Method Get -Headers $header -Uri ($MSIEndpoint + '?resource=' + $vaultTokenURI)
-$authenticationResult
-# Use Key Vault AuthN Token to create Request Header
-$requestHeader = @{ Authorization = "Bearer $($authenticationResult.access_token)" }
-
-# Call the Vault and retrieve credential object, return the result
-$result=Invoke-RestMethod -Method GET -Uri $vaultSecretURI -ContentType 'application/json' -Headers $requestHeader
-write-output "result $($result)"
-
-return $result
 }
 
 
@@ -64,8 +37,8 @@ $VerbosePreference="Continue"
 # }
 $SqlServer=[Environment]::GetEnvironmentVariable("SQLServer")  
 $Database=[Environment]::GetEnvironmentVariable("Database")  
-$SqlUsername =$(Get-AzureFunctionKeyVaultSecret -SecretIdentifier "https://sqlagentdemokv.vault.azure.net/secrets/sqlusername/8a0a40ce09b24aa4a3c833fe12a7d62c").value
-$SqlPass =$(Get-AzureFunctionKeyVaultSecret -SecretIdentifier "https://sqlagentdemokv.vault.azure.net/secrets/sqlpassword/647bda0f9b094a57a835eb7fe880f8ec").value
+$SqlUsername =$(get-azkeyvaultsecret -VaultName 'sqlagentdemokv' -Name "sqlusername").secretText
+$SqlPass =$(get-azkeyvaultsecret -VaultName 'sqlagentdemokv' -Name "sqlpassword").secretText
 
 write-output "username  $SqlUsername"
 write-output "Fragmentation Level = $REQ_QUERY_FragPercentage"
