@@ -1,5 +1,5 @@
 Write-Output "Creating job credentials..."
-$jobAgent= Get-AzSqlElasticJobAgent -ResourceGroupName "SQLAgentDemos" -ServerName "SQLAgentDemo" -Name "DemoJobAgent"
+$jobAgent= Get-AzSqlElasticJobAgent -ResourceGroupName "SQLAgentDemos" -ServerName "SQLAgentDemo" -Name "sqlDemoAgent"
 $LoginPasswordSecure = (ConvertTo-SecureString -String "password!123" -AsPlainText -Force)
 
 $MasterCred = New-Object -TypeName "System.Management.Automation.PSCredential" -ArgumentList "masteruser", $LoginPasswordSecure

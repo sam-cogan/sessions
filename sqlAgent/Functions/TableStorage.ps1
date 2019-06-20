@@ -1,78 +1,20 @@
-    <#
-    .SYNOPSIS 
-        Indexes tables in a database if they have a high fragmentation
 
-    .DESCRIPTION
-        This runbook indexes all of the tables in a given database if the fragmentation is
-        above a certain percentage. 
-        It highlights how to break up calls into smaller chunks, 
-        in this case each table in a database, and use checkpoints. 
-        This allows the runbook job to resume for the next chunk of work even if the 
-        fairshare feature of Azure Automation puts the job back into the queue every 30 minutes
 
-    .PARAMETER SqlServer
-        Name of the SqlServer
+    param($request,$inputValues, $TriggerMetadata)
 
-    .PARAMETER Database
-        Name of the database
-        
-    .PARAMETER SQLCredentialName
-        Name of the Automation PowerShell credential setting from the Automation asset store. 
-        This setting stores the username and password for the SQL Azure server
+    $VerbosePreference="Continue"
 
-    .PARAMETER FragPercentage
-        Optional parameter for specifying over what percentage fragmentation to index database
-        Default is 20 percent
-    
-    .PARAMETER RebuildOffline
-        Optional parameter to rebuild indexes offline if online fails 
-        Default is false
-        
-    .PARAMETER Table
-        Optional parameter for specifying a specific table to index
-        Default is all tables
-        
-    .PARAMETER SqlServerPort
-        Optional parameter for specifying the SQL port 
-        Default is 1433
-        
-    .EXAMPLE
-        Update-SQLIndexRunbook -SqlServer "server.database.windows.net" -Database "Finance" -SQLCredentialName "FinanceCredentials"
-
-    .EXAMPLE
-        Update-SQLIndexRunbook -SqlServer "server.database.windows.net" -Database "Finance" -SQLCredentialName "FinanceCredentials" -FragPercentage 30
-
-    .EXAMPLE
-        Update-SQLIndexRunbook -SqlServer "server.database.windows.net" -Database "Finance" -SQLCredentialName "FinanceCredentials" -Table "Customers" -RebuildOffline $True
-
-    .NOTES
-        AUTHOR: System Center Automation Team
-        LASTEDIT: Oct 8th, 2014 
-    #>
-
-    param(
-                           
-    
-
-        [parameter(Mandatory=$False)]
-        [int] $SqlServerPort = 1433,
-        
-        [parameter(Mandatory=$False)]
-        [boolean] $RebuildOffline = $False,
-
-        [parameter(Mandatory=$False)]
-        [string] $Table
-                
-    )
+$SqlServerPort = 1433
+$RebuildOffline = $False
 
     $VerbosePreference="Continue"
 
     # # Get the stored username and password from the Automation credential
     # $SqlCredential = Get-AutomationPSCredential -Name $SQLCredentialName
 
-
-    $in = Get-Content $inputValues
-    $inputJson = $in| ConvertFrom-Json
+write-output "input:" + $($inputValues | out-string)
+   
+   write-output "username: $($inputValues.SQLCredentialUsername)"
 
 
 
@@ -80,10 +22,10 @@
     # {
     #     throw "Could not retrieve '$SQLCredentialName' credential asset. Check that you created this first in the Automation service."
     # }
-    $SqlServer=$inputJson.SQLServer
-    $Database=$inputJson.Database
-    $SqlUsername =$inputJson.SQLCredentialUserName
-    $SqlPass = $inputJson.SQLCredentialPassword
+    $SqlServer= $inputValues.SQLServer
+    $Database= $inputValues.Database
+    $SqlUsername = $inputValues.SQLCredentialUsername
+    $SqlPass =  $inputValues.SQLCredentialPassword
     write-output "Fragmentation Level = $REQ_QUERY_FragPercentage"
     if($REQ_QUERY_FragPercentage){
         $FragPercentage = $REQ_QUERY_FragPercentage
@@ -93,7 +35,7 @@
     }
 
     $TableNames=@()
-    
+    write-output "Server=tcp:$SqlServer,$SqlServerPort;Database=$Database;User ID=$SqlUsername;Password=$SqlPass;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;"
         # Define the connection to the SQL Database
         $Conn = New-Object System.Data.SqlClient.SqlConnection("Server=tcp:$SqlServer,$SqlServerPort;Database=$Database;User ID=$SqlUsername;Password=$SqlPass;Trusted_Connection=False;Encrypt=True;Connection Timeout=30;")
         
